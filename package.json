@@ -1,13 +1,13 @@
 {
   "name": "pixi-table-layout",
   "version": "1.0.0",
-  "description": "A simple flex-like layout library with basic components",
+  "description": "A simple flex-like layout library",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc --build && npm run copy-assets",
+    "build": "tsc --build",
     "clean": "tsc --build --clean",
-    "copy-assets": "cp -r ./assets ./dist/"
+    "copy-assets": "cp -r ./dist/"
   },
   "repository": "https://github.com/srpatel/pixi-table-layout",
   "author": "sunil patel <me@sunil.page>",
