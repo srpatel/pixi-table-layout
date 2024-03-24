@@ -196,6 +196,7 @@ export default class Table extends SizeableContainer {
         if (this.debug) {
             this.addChild(this.debugGraphic);
             this.debugGraphic.clear();
+            this.debugGraphic.rect(0, 0, this.width, this.height).stroke({ width: 1, color: 0xff0000 });
         }
 
         const rowSizes = this.calcSizes(this.height, this.rows);
