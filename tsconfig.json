@@ -1,0 +1,23 @@
+{
+	"compilerOptions": {
+		"outDir": "./dist/",
+		"sourceMap": true,
+		"skipLibCheck": true,
+		"noImplicitAny": true,
+		"module": "es6",
+		"target": "es6",
+		"allowJs": true,
+		"moduleResolution": "node",
+		"downlevelIteration": true,
+		"declaration": true,
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"baseUrl": "./",
+		"paths": {
+		  "mini-signals": [
+			"node_modules/resource-loader/typings/mini-signals.d.ts"
+		  ]
+		}
+	},
+	"include": ["src/**/*"],
+}

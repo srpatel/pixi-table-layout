@@ -1,0 +1,26 @@
+{
+  "name": "pixi-simple-ui",
+  "version": "1.0.0",
+  "description": "A simple flex-like layout library with basic components",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc --build && npm run copy-assets",
+    "clean": "tsc --build --clean",
+    "copy-assets": "cp -r ./assets ./dist/"
+  },
+  "repository": "https://github.com/srpatel/pixi-simple-ui",
+  "author": "sunil patel <me@sunil.page>",
+  "license": "MIT",
+  "keywords": [
+    "pixi",
+    "pixijs"
+  ],
+  "peerDependencies": {
+    "pixi.js": "^8.0.0"
+  },
+  "devDependencies": {
+    "pixi.js": "^8.0.0",
+    "typescript": "^5.4.3"
+  }
+}
