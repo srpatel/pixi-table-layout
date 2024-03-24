@@ -1,5 +1,5 @@
 {
-  "name": "pixi-simple-ui",
+  "name": "pixi-table-layout",
   "version": "1.0.0",
   "description": "A simple flex-like layout library with basic components",
   "main": "dist/index.js",
@@ -9,7 +9,7 @@
     "clean": "tsc --build --clean",
     "copy-assets": "cp -r ./assets ./dist/"
   },
-  "repository": "https://github.com/srpatel/pixi-simple-ui",
+  "repository": "https://github.com/srpatel/pixi-table-layout",
   "author": "sunil patel <me@sunil.page>",
   "license": "MIT",
   "keywords": [
