@@ -110,7 +110,7 @@ All of these examples are show with debug draw on.
 <table>
 	<thead>
 		<tr>
-			<th></th>
+			<th>Picture</th>
 			<th>Code</th>
 		</tr>
 	</thead>
