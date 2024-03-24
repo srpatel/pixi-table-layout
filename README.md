@@ -121,18 +121,18 @@ All of these examples are show with debug draw on.
 			<td><b>Contain</b><pre lang="js">
 // prettier-ignore
 root
-	.row()
-        .cell()
-        .cell("20%").element(PIXI.Sprite.from("doughnut.png"), "contain", CellAnchor.Top)
-        .cell()
-	.row("20%")
-        .cell().element(PIXI.Sprite.from("doughnut.png"), "contain", CellAnchor.Left)
-		.cell().element(PIXI.Sprite.from("doughnut.png"), "contain")
-		.cell().element(PIXI.Sprite.from("doughnut.png"), "contain", CellAnchor.Right)
-	.row()
-        .cell()
-        .cell("20%").element(PIXI.Sprite.from("doughnut.png"), "contain", CellAnchor.Bottom)
-        .cell();
+  .row()
+    .cell()
+    .cell("20%").element(PIXI.Sprite.from("doughnut.png"), "contain", CellAnchor.Top)
+    .cell()
+  .row("20%")
+    .cell().element(PIXI.Sprite.from("doughnut.png"), "contain", CellAnchor.Left)
+    .cell().element(PIXI.Sprite.from("doughnut.png"), "contain")
+    .cell().element(PIXI.Sprite.from("doughnut.png"), "contain", CellAnchor.Right)
+  .row()
+    .cell()
+    .cell("20%").element(PIXI.Sprite.from("doughnut.png"), "contain", CellAnchor.Bottom)
+    .cell();
 root.debug = true;</pre>
 Sprites are resized to fit within cells, but aspect ratio is maintained.
 </td>
@@ -143,14 +143,13 @@ Sprites are resized to fit within cells, but aspect ratio is maintained.
 			<td><b>Stretch</b><pre lang="js">
 // prettier-ignore
 root
-	.row()
-		.cell().element(PIXI.Sprite.from("doughnut.png"), "stretch")
-		.cell().element(PIXI.Sprite.from("doughnut.png"), "stretch")
-        .cell().element(PIXI.Sprite.from("doughnut.png"), "stretch")
-	.row(20)
-	.row()
-		.cell()
-			.element(PIXI.Sprite.from("doughnut.png"), "stretch");
+  .row()
+    .cell().element(PIXI.Sprite.from("doughnut.png"), "stretch")
+    .cell().element(PIXI.Sprite.from("doughnut.png"), "stretch")
+    .cell().element(PIXI.Sprite.from("doughnut.png"), "stretch")
+  .row(20)
+  .row()
+    .cell().element(PIXI.Sprite.from("doughnut.png"), "stretch");
 root.debug = true;</pre>
 Sprites are sized exactly to their containing cells.
 </td>
@@ -161,12 +160,12 @@ Sprites are sized exactly to their containing cells.
 			<td><b>Cover</b><pre lang="js">
 // prettier-ignore
 root
-	.row()
-	.row(150)
-		.cell(100)
-		.cell().element(PIXI.Sprite.from("doughnut.png"), "cover", CellAnchor.Top)
-		.cell(100)
-	.row();
+  .row()
+  .row(150)
+    .cell(100)
+    .cell().element(PIXI.Sprite.from("doughnut.png"), "cover", CellAnchor.Top)
+    .cell(100)
+  .row();
 root.debug = true;</pre>
 Sprite grows to completely cover the cell, even spilling outside the cell's bounds.
 </td>
@@ -177,14 +176,14 @@ Sprite grows to completely cover the cell, even spilling outside the cell's boun
 			<td><b>No sizing strategy</b><pre lang="js">
 // prettier-ignore
 root
-	.row()
-		.cell().element(PIXI.Sprite.from("doughnut.png"), CellAnchor.Top)
-		.cell().element(PIXI.Sprite.from("doughnut.png"), new PIXI.Point(0.2, 0.9))
-        .cell().element(PIXI.Sprite.from("doughnut.png"))
-	.row()
-		.cell()
-			.element(PIXI.Sprite.from("doughnut.png"), CellAnchor.TopLeft)
-			.element(PIXI.Sprite.from("doughnut.png"), CellAnchor.BottomRight);
+  .row()
+    .cell().element(PIXI.Sprite.from("doughnut.png"), CellAnchor.Top)
+    .cell().element(PIXI.Sprite.from("doughnut.png"), new PIXI.Point(0.2, 0.9))
+    .cell().element(PIXI.Sprite.from("doughnut.png"))
+  .row()
+    .cell()
+      .element(PIXI.Sprite.from("doughnut.png"), CellAnchor.TopLeft)
+      .element(PIXI.Sprite.from("doughnut.png"), CellAnchor.BottomRight);
 root.debug = true;</pre>
 Sprites are left at their original size, and simple placed according to their anchors. Note that one cell can have multiple elements
 </td>
@@ -195,12 +194,12 @@ Sprites are left at their original size, and simple placed according to their an
 			<td><b>Sub-tables</b><pre lang="js">
 // prettier-ignore
 root
-	.row()
-		.cell("33%").element(subTable1, "stretch")
-		.cell().element(PIXI.Sprite.from("doughnut.png"))
-	.row()
-		.cell().element(PIXI.Sprite.from("doughnut.png"))
-		.cell(350).element(subTable2, "stretch");
+  .row()
+    .cell("33%").element(subTable1, "stretch")
+    .cell().element(PIXI.Sprite.from("doughnut.png"))
+  .row()
+    .cell().element(PIXI.Sprite.from("doughnut.png"))
+    .cell(350).element(subTable2, "stretch");
 root.debug = true;</pre>
 Sub-tables are permitted and encouraged! When adding a table as an element, you almost certainly want to use the "stretch" sizing strategy.
 </td>
