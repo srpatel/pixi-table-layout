@@ -2,11 +2,22 @@ import * as PIXI from 'pixi.js';
 
 export type Basis = number | string | null;
 
-export interface Element {
+export class Element {
     container: PIXI.Container;
     strategy: SizingStrategy | null;
-    anchor: PIXI.Point | null;
-    originalSize: PIXI.Point | null;
+    anchor: PIXI.Point;
+    originalSize: PIXI.Point;
+    constructor(
+        container: PIXI.Container,
+        strategy: SizingStrategy | null = null,
+        anchor: PIXI.Point = CellAnchor.Middle,
+        originalSize: PIXI.Point | null = null
+    ) {
+        this.container = container;
+        this.strategy = strategy;
+        this.anchor = anchor;
+        this.originalSize = originalSize ?? new PIXI.Point(container.width, container.height);
+    }
 }
 
 export abstract class BasisHaver {
@@ -18,11 +29,11 @@ export abstract class BasisHaver {
 
 export class Row extends BasisHaver {
     cells: Array<Cell> = [];
-};
+}
 
 export class Cell extends BasisHaver {
     elements: Array<Element> = [];
-};
+}
 
 export const CellAnchor = {
     TopLeft: new PIXI.Point(0, 0),

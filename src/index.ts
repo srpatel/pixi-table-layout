@@ -1,9 +1,8 @@
 import * as PIXI from 'pixi.js';
 import SizeableContainer from './SizeableContainer';
-import { Row, Cell, Basis, SizingStrategy, BasisHaver } from './types';
+import { Element, Row, Cell, Basis, SizingStrategy, BasisHaver } from './types';
 
 // null, 20, "20%"
-
 
 /**
  * A layout is a container which automatically lays out the children according to a table-based layout.
@@ -51,6 +50,18 @@ export default class Table extends SizeableContainer {
         };
     }
 
+    makeElement(e: PIXI.Container, strategy: SizingStrategy | PIXI.Point = null, anchor: PIXI.Point = null): Element {
+        let sizingStrategy: SizingStrategy = null;
+        if (strategy instanceof PIXI.Point) {
+            // If you only supply an anchor, don't size element
+            anchor = strategy;
+            sizingStrategy = null;
+        } else {
+            sizingStrategy = strategy;
+        }
+        return new Element(e, sizingStrategy, anchor);
+    }
+
     row(p: Basis | Row = null) {
         let row: Row = null;
         if (p instanceof Row) {
@@ -80,17 +91,15 @@ export default class Table extends SizeableContainer {
         return this;
     }
 
-    element(e: PIXI.Container, strategy: SizingStrategy | PIXI.Point = null, anchor: PIXI.Point = null) {
+    element(e: PIXI.Container | Element, strategy: SizingStrategy | PIXI.Point = null, anchor: PIXI.Point = null) {
         if (!this.previousRow) {
             throw new Error('You must start a row first');
         }
-        let sizingStrategy: SizingStrategy = null;
-        if (strategy instanceof PIXI.Point) {
-            // If you only supply an anchor, don't size element
-            anchor = strategy;
-            sizingStrategy = null;
+        let element: Element;
+        if (e instanceof Element) {
+            element = e;
         } else {
-            sizingStrategy = strategy;
+            element = this.makeElement(e, strategy, anchor);
         }
 
         if (!this.previousCell) {
@@ -98,13 +107,7 @@ export default class Table extends SizeableContainer {
             this.cell();
         }
 
-        this.previousCell.elements.push({
-            container: e,
-            strategy: sizingStrategy,
-            anchor,
-            originalSize: new PIXI.Point(e.width, e.height),
-        });
-
+        this.previousCell.elements.push(element);
         this.hasChildrenChanged = true;
 
         return this;
@@ -140,8 +143,8 @@ export default class Table extends SizeableContainer {
         return outSizes;
     }
 
-    update() {
-        if (this.hasChildrenChanged) {
+    update(forceUpdateChildren = false) {
+        if (forceUpdateChildren || this.hasChildrenChanged) {
             this.hasChildrenChanged = false;
             this.removeChildren();
 
