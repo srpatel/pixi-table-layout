@@ -110,12 +110,14 @@ All of these examples are show with debug draw on.
 <table>
 	<thead>
 		<tr>
+			<th></th>
 			<th>Code</th>
-			<th>Layout</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
+			<td><img src="https://github.com/srpatel/pixi-table-layout/assets/4903502/fb31f4db-4ab5-4c34-a2ca-139d38ef855e">
+</td>
 			<td><b>Contain</b><pre lang="js">
 // prettier-ignore
 root
@@ -134,10 +136,10 @@ root
 root.debug = true;</pre>
 Sprites are resized to fit within cells, but aspect ratio is maintained.
 </td>
-			<td><img src="https://github.com/srpatel/pixi-table-layout/assets/4903502/fb31f4db-4ab5-4c34-a2ca-139d38ef855e">
-</td>
 		</tr>
 		<tr>
+			<td><img src="https://github.com/srpatel/pixi-table-layout/assets/4903502/54cb9a86-5a48-4232-9658-64b33181e438">
+</td>
 			<td><b>Stretch</b><pre lang="js">
 // prettier-ignore
 root
@@ -152,10 +154,10 @@ root
 root.debug = true;</pre>
 Sprites are sized exactly to their containing cells.
 </td>
-			<td><img src="https://github.com/srpatel/pixi-table-layout/assets/4903502/54cb9a86-5a48-4232-9658-64b33181e438">
-</td>
 		</tr>
 		<tr>
+			<td><img src="https://github.com/srpatel/pixi-table-layout/assets/4903502/11e47a93-3f7f-4831-a4b4-599d24cb5aa6">
+</td>
 			<td><b>Cover</b><pre lang="js">
 // prettier-ignore
 root
@@ -168,10 +170,10 @@ root
 root.debug = true;</pre>
 Sprite grows to completely cover the cell, even spilling outside the cell's bounds.
 </td>
-			<td><img src="https://github.com/srpatel/pixi-table-layout/assets/4903502/11e47a93-3f7f-4831-a4b4-599d24cb5aa6">
-</td>
 		</tr>
 		<tr>
+			<td><img src="https://github.com/srpatel/pixi-table-layout/assets/4903502/cb3fbce5-c0a3-40d1-8dc1-c1b948c6216d">
+</td>
 			<td><b>No sizing strategy</b><pre lang="js">
 // prettier-ignore
 root
@@ -186,10 +188,10 @@ root
 root.debug = true;</pre>
 Sprites are left at their original size, and simple placed according to their anchors. Note that one cell can have multiple elements
 </td>
-			<td><img src="https://github.com/srpatel/pixi-table-layout/assets/4903502/cb3fbce5-c0a3-40d1-8dc1-c1b948c6216d">
-</td>
 		</tr>
 		<tr>
+			<td><img src="https://github.com/srpatel/pixi-table-layout/assets/4903502/756b7386-b501-402a-af62-5cac81b46397">
+</td>
 			<td><b>Sub-tables</b><pre lang="js">
 // prettier-ignore
 root
@@ -201,8 +203,6 @@ root
 		.cell(350).element(subTable2, "stretch");
 root.debug = true;</pre>
 Sub-tables are permitted and encouraged! When adding a table as an element, you almost certainly want to use the "stretch" sizing strategy.
-</td>
-			<td><img src="https://github.com/srpatel/pixi-table-layout/assets/4903502/756b7386-b501-402a-af62-5cac81b46397">
 </td>
 		</tr>
 	</tbody>
