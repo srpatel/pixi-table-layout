@@ -1,6 +1,6 @@
 {
   "name": "pixi-table-layout",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple flex-like layout library",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

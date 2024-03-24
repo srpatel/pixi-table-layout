@@ -2,11 +2,9 @@ import * as PIXI from 'pixi.js';
 import SizeableContainer from './SizeableContainer';
 import { Element, Row, Cell, Basis, SizingStrategy, BasisHaver } from './types';
 
-// null, 20, "20%"
+export { Element, Row, Cell };
+export { CellAnchor } from './types';
 
-/**
- * A layout is a container which automatically lays out the children according to a table-based layout.
- */
 export default class Table extends SizeableContainer {
     private rows: Array<Row> = [];
 

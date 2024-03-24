@@ -8,22 +8,16 @@ It's a work-in-progress. Contributions welcome.
 
 If you like this, you may like my other PixiJS library [pixi-actions](https://github.com/srpatel/pixi-actions).
 
-## Building and linking
-
-If this library is of interest to you, let me know. I can build and upload to npm sooner rather than later. Right now, the API is in flux.
-
-This is not yet uploaded to npm, so you would need to build yourself, and link it to your project.
+## Installing
 
 ```bash
-# From pixi-simple-ui
-npm install
-npm run build
-cp package.json dist/
-cd dist/
-npm link
+npm install pixi-simple-ui
+```
 
-# From the project in which you want to use pixi-simple-ui
-npm link pixi-simple-ui
+Import required types:
+
+```javascript
+import Table, { CellAnchor } from 'pixi-table-layout';
 ```
 
 ## Usage
